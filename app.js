@@ -9,13 +9,14 @@ function init(){
         newQuestion(item);
         
 })
-        console.log(request.responseText);
+       
     
         request.send();
 
-        // let button = document.querySelector('#submit');
-        // button.addEventListener('click', checkAnswer);
-        // button.addEventListener('click', newQuestion);
+        
+        let button = document.querySelector('#submit');
+        button.addEventListener('click', checkAnswer(item));
+        button.addEventListener('click', newQuestion(item));
 }
 
 
@@ -33,25 +34,20 @@ function newQuestion(quiz){
         section.appendChild(question);
         
         
-       
-        
 }
 
 
+function checkAnswer(guess){
+    let score = document.querySelector('h1');
+    score = 0;
+    let input = textbox.value;
 
-// function checkAnswer(){
-//     if();
-// }
+    if(input === guess.answer){
+        score.textContent = score + guess.value;
+        section.appendChild(score);
+}
 
-
-
-
-
-
-
-
-
-// }
+}
 
 
 
